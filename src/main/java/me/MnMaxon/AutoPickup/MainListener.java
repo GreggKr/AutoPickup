@@ -205,7 +205,7 @@ public class MainListener implements Listener {
         }
     }
 
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onBlockBreak(BlockBreakEvent e) {
         if (!AutoPickupPlugin.autoChest && e.getBlock().getType().name().contains("CHEST")) return;
         ItemStack inhand = e.getPlayer().getItemInHand();
